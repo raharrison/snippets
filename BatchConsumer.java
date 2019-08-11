@@ -16,9 +16,9 @@ public abstract class BatchConsumer<K, V> {
     private Class<K> kClass;
     private Class<V> vClass;
     private KafkaTemplate<Object, Object> errorTemplate;
-    private KafkaTemplate<Object, Object> deserrTemplate;
+    private KafkaTemplate<String, String> deserrTemplate;
 
-    public BatchConsumer(Class<K> kClass, Class<V> vClass, KafkaTemplate<Object, Object> errorTemplate, KafkaTemplate<Object, Object> deserrTemplate) {
+    public BatchConsumer(Class<K> kClass, Class<V> vClass, KafkaTemplate<Object, Object> errorTemplate, KafkaTemplate<String, String> deserrTemplate) {
         this.kClass = kClass;
         this.vClass = vClass;
         this.errorTemplate = errorTemplate;
@@ -34,8 +34,12 @@ public abstract class BatchConsumer<K, V> {
             return new ConsumerRecord<>(record.topic(), record.partition(), record.offset(), key, value);
         } catch (IOException e) {
             System.out.println("Error deserializing: " + record.value());
-            deserrTemplate.send(record.topic() + ".deserr", 0, record.key(), record.value());
-            return null;
+            try {
+                deserrTemplate.send(record.topic() + ".deserr", 0, record.key(), record.value()).get();
+                return null;
+            } catch (Exception ex) {
+                throw new RuntimeException("Exception pushing to error topic", ex);
+            }
         }
     }
 
@@ -53,11 +57,12 @@ public abstract class BatchConsumer<K, V> {
                 process(deserializedRecord);
             } catch (Exception e) {
                 System.out.println("Error processing: " + deserializedRecord.value());
-                errorTemplate.send(deserializedRecord.topic() + ".error", 0, deserializedRecord.key(), deserializedRecord.value());
-                throw new RuntimeException("Bad things happened");
+                try {
+                    errorTemplate.send(deserializedRecord.topic() + ".error", 0, deserializedRecord.key(), deserializedRecord.value()).get();
+                } catch (Exception ex) {
+                    throw new RuntimeException("Exception pushing to error topic", ex);
+                }
             }
         }
-
     }
-
 }
