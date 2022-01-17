@@ -1,0 +1,364 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "api_gateway": {
+            "title": "Api_gateway",
+            "type": "object",
+            "properties": {
+                "cloudwatch_metrics_enabled": {
+                    "title": "Cloudwatch_metrics_enabled",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "data_trace_enabled": {
+                    "title": "Data_trace_enabled",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "endpoint_type": {
+                    "title": "Endpoint_type",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["PRIVATE"],
+                    "pattern": "^.*$"
+                },
+                "key_enabled": {
+                    "title": "Key_enabled",
+                    "type": "boolean",
+                    "examples": [true],
+                    "default": true
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "null",
+                    "default": null
+                },
+                "stage_name": {
+                    "title": "Stage_name",
+                    "type": "null",
+                    "default": null
+                },
+                "usage_plan_burst_limit": {
+                    "title": "Usage_plan_burst_limit",
+                    "type": "integer",
+                    "examples": [10000],
+                    "default": 0
+                },
+                "usage_plan_rate_limit": {
+                    "$id": "#root/api_gateway/usage_plan_rate_limit",
+                    "title": "Usage_plan_rate_limit",
+                    "type": "integer",
+                    "examples": [5000],
+                    "default": 0
+                },
+                "xray_tracing_enabled": {
+                    "$id": "#root/api_gateway/xray_tracing_enabled",
+                    "title": "Xray_tracing_enabled",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                }
+            }
+        },
+        "api_gateway_swagger_variables": {
+            "$id": "#root/api_gateway_swagger_variables",
+            "title": "Api_gateway_swagger_variables",
+            "type": "null",
+            "default": null
+        },
+        "cloudfront_distribution": {
+            "$id": "#root/cloudfront_distribution",
+            "title": "Cloudfront_distribution",
+            "type": "object",
+            "properties": {
+                "acm_certificate_arn": {
+                    "$id": "#root/cloudfront_distribution/acm_certificate_arn",
+                    "title": "Acm_certificate_arn",
+                    "type": "null",
+                    "default": null
+                },
+                "alias": {
+                    "$id": "#root/cloudfront_distribution/alias",
+                    "title": "Alias",
+                    "type": "null",
+                    "default": null
+                },
+                "default_root_object": {
+                    "$id": "#root/cloudfront_distribution/default_root_object",
+                    "title": "Default_root_object",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["index.html"],
+                    "pattern": "^.*$"
+                },
+                "geo_restriction_locations": {
+                    "$id": "#root/cloudfront_distribution/geo_restriction_locations",
+                    "title": "Geo_restriction_locations",
+                    "type": "array",
+                    "default": []
+                },
+                "geo_restriction_type": {
+                    "$id": "#root/cloudfront_distribution/geo_restriction_type",
+                    "title": "Geo_restriction_type",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["none"],
+                    "pattern": "^.*$"
+                },
+                "is_enabled": {
+                    "$id": "#root/cloudfront_distribution/is_enabled",
+                    "title": "Is_enabled",
+                    "type": "boolean",
+                    "examples": [true],
+                    "default": true
+                },
+                "is_ipv6_enabled": {
+                    "$id": "#root/cloudfront_distribution/is_ipv6_enabled",
+                    "title": "Is_ipv6_enabled",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "logging_include_cookies": {
+                    "$id": "#root/cloudfront_distribution/logging_include_cookies",
+                    "title": "Logging_include_cookies",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "logging_prefix": {
+                    "$id": "#root/cloudfront_distribution/logging_prefix",
+                    "title": "Logging_prefix",
+                    "type": "null",
+                    "default": null
+                },
+                "name": {
+                    "$id": "#root/cloudfront_distribution/name",
+                    "title": "Name",
+                    "type": "null",
+                    "default": null
+                },
+                "price_class": {
+                    "$id": "#root/cloudfront_distribution/price_class",
+                    "title": "Price_class",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["PriceClass_200"],
+                    "pattern": "^.*$"
+                }
+            }
+        },
+        "cloudfront_distribution_default_cache_behavior": {
+            "$id": "#root/cloudfront_distribution_default_cache_behavior",
+            "title": "Cloudfront_distribution_default_cache_behavior",
+            "type": "null",
+            "default": null
+        },
+        "cloudfront_distribution_ordered_cache_behaviors": {
+            "$id": "#root/cloudfront_distribution_ordered_cache_behaviors",
+            "title": "Cloudfront_distribution_ordered_cache_behaviors",
+            "type": "null",
+            "default": null
+        },
+        "cloudfront_distribution_origins": {
+            "$id": "#root/cloudfront_distribution_origins",
+            "title": "Cloudfront_distribution_origins",
+            "type": "null",
+            "default": null
+        },
+        "cloudfront_distribution_s3_origins": {
+            "$id": "#root/cloudfront_distribution_s3_origins",
+            "title": "Cloudfront_distribution_s3_origins",
+            "type": "null",
+            "default": null
+        },
+        "cloudfront_enabled": {
+            "$id": "#root/cloudfront_enabled",
+            "title": "Cloudfront_enabled",
+            "type": "boolean",
+            "examples": [false],
+            "default": true
+        },
+        "cloudfront_origin_access_identity_name": {
+            "$id": "#root/cloudfront_origin_access_identity_name",
+            "title": "Cloudfront_origin_access_identity_name",
+            "type": "null",
+            "default": null
+        },
+        "environment_type": {
+            "$id": "#root/environment_type",
+            "title": "Environment_type",
+            "type": "null",
+            "default": null
+        },
+        "lambda_function": {
+            "$id": "#root/lambda_function",
+            "title": "Lambda_function",
+            "type": "object",
+            "properties": {
+                "canary_enabled": {
+                    "$id": "#root/lambda_function/canary_enabled",
+                    "title": "Canary_enabled",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "description": {
+                    "$id": "#root/lambda_function/description",
+                    "title": "Description",
+                    "type": "null",
+                    "default": null
+                },
+                "environment_variables": {
+                    "$id": "#root/lambda_function/environment_variables",
+                    "title": "Environment_variables",
+                    "type": "object",
+                    "properties": {}
+                },
+                "execution_role_arn": {
+                    "$id": "#root/lambda_function/execution_role_arn",
+                    "title": "Execution_role_arn",
+                    "type": "null",
+                    "default": null
+                },
+                "handler": {
+                    "$id": "#root/lambda_function/handler",
+                    "title": "Handler",
+                    "type": "null",
+                    "default": null
+                },
+                "memory_size": {
+                    "$id": "#root/lambda_function/memory_size",
+                    "title": "Memory_size",
+                    "type": "integer",
+                    "examples": [1024],
+                    "default": 0
+                },
+                "name": {
+                    "$id": "#root/lambda_function/name",
+                    "title": "Name",
+                    "type": "null",
+                    "default": null
+                },
+                "permission_paths": {
+                    "$id": "#root/lambda_function/permission_paths",
+                    "title": "Permission_paths",
+                    "type": "array",
+                    "default": []
+                },
+                "runtime": {
+                    "$id": "#root/lambda_function/runtime",
+                    "title": "Runtime",
+                    "type": "null",
+                    "default": null
+                },
+                "timeout": {
+                    "$id": "#root/lambda_function/timeout",
+                    "title": "Timeout",
+                    "type": "integer",
+                    "examples": [300],
+                    "default": 0
+                },
+                "tracing_config_mode": {
+                    "$id": "#root/lambda_function/tracing_config_mode",
+                    "title": "Tracing_config_mode",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["Active"],
+                    "pattern": "^.*$"
+                }
+            }
+        },
+        "lambda_function_brands": {
+            "$id": "#root/lambda_function_brands",
+            "title": "Lambda_function_brands",
+            "type": "array",
+            "default": [],
+            "items": {
+                "$id": "#root/lambda_function_brands/items",
+                "title": "Items",
+                "type": "string",
+                "default": "",
+                "examples": ["hsbc"],
+                "pattern": "^.*$"
+            }
+        },
+        "logging_bucket_name": {
+            "$id": "#root/logging_bucket_name",
+            "title": "Logging_bucket_name",
+            "type": "null",
+            "default": null
+        },
+        "region": {
+            "$id": "#root/region",
+            "title": "Region",
+            "type": "null",
+            "default": null
+        },
+        "s3_bucket": {
+            "$id": "#root/s3_bucket",
+            "title": "S3_bucket",
+            "type": "object",
+            "properties": {
+                "acl": {
+                    "$id": "#root/s3_bucket/acl",
+                    "title": "Acl",
+                    "type": "string",
+                    "default": "",
+                    "examples": ["private"],
+                    "pattern": "^.*$"
+                },
+                "force_destroy": {
+                    "$id": "#root/s3_bucket/force_destroy",
+                    "title": "Force_destroy",
+                    "type": "boolean",
+                    "examples": [false],
+                    "default": true
+                },
+                "name": {
+                    "$id": "#root/s3_bucket/name",
+                    "title": "Name",
+                    "type": "null",
+                    "default": null
+                },
+                "tags": {
+                    "$id": "#root/s3_bucket/tags",
+                    "title": "Tags",
+                    "type": "object",
+                    "properties": {}
+                },
+                "versioning_enabled": {
+                    "$id": "#root/s3_bucket/versioning_enabled",
+                    "title": "Versioning_enabled",
+                    "type": "boolean",
+                    "examples": [true],
+                    "default": true
+                }
+            }
+        },
+        "terraform_state_bucket_name": {
+            "title": "Terraform_state_bucket_name",
+            "type": "null",
+            "default": null
+        },
+        "waf_enabled": {
+            "title": "Waf_enabled",
+            "type": "boolean",
+            "examples": [true],
+            "default": true
+        },
+        "waf_web_acl_arn": {
+            "title": "Waf_web_acl_arn",
+            "type": "null",
+            "default": null
+        },
+        "web_acl_id": {
+            "title": "Web_acl_id",
+            "type": "null",
+            "default": null
+        }
+    }
+}

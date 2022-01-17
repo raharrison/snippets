@@ -1,0 +1,365 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "description": "todo",
+    "properties": {
+        "api_gateway": {
+            "title": "Api Gateway",
+            "type": "object",
+            "description": "todo",
+            "properties": {
+                "cloudwatch_metrics_enabled": {
+                    "type": "boolean",
+                    "title": "Cloudwatch Metrics Enabled",
+                    "description": "todo",
+                    "default": false
+                },
+                "data_trace_enabled": {
+                    "type": "boolean",
+                    "title": "Data Trace Enabled",
+                    "description": "todo",
+                    "default": false
+                },
+                "endpoint_type": {
+                    "type": "string",
+                    "title": "Endpoint Type",
+                    "description": "todo",
+                    "default": "PRIVATE"
+                },
+                "key_enabled": {
+                    "type": "boolean",
+                    "title": "Key Enabled",
+                    "description": "todo",
+                    "default": true
+                },
+                "name": {
+                    "type": "null",
+                    "title": "Name",
+                    "description": "todo",
+                    "default": null
+                },
+                "stage_name": {
+                    "type": "null",
+                    "title": "Stage Name",
+                    "description": "todo",
+                    "default": null
+                },
+                "usage_plan_burst_limit": {
+                    "type": "integer",
+                    "title": "Usage Plan Burst Limit",
+                    "description": "todo",
+                    "default": 10000
+                },
+                "usage_plan_rate_limit": {
+                    "type": "integer",
+                    "title": "Usage Plan Rate Limit",
+                    "description": "todo",
+                    "default": 5000
+                },
+                "xray_tracing_enabled": {
+                    "type": "boolean",
+                    "title": "Xray Tracing Enabled",
+                    "description": "todo",
+                    "default": false
+                }
+            }
+        },
+        "api_gateway_swagger_variables": {
+            "type": "null",
+            "title": "Api Gateway Swagger Variables",
+            "description": "todo",
+            "default": null
+        },
+        "cloudfront_distribution": {
+            "title": "Cloudfront Distribution",
+            "type": "object",
+            "description": "todo",
+            "properties": {
+                "acm_certificate_arn": {
+                    "type": "null",
+                    "title": "Acm Certificate Arn",
+                    "description": "todo",
+                    "default": null
+                },
+                "alias": {
+                    "type": "null",
+                    "title": "Alias",
+                    "description": "todo",
+                    "default": null
+                },
+                "default_root_object": {
+                    "type": "string",
+                    "title": "Default Root Object",
+                    "description": "todo",
+                    "default": "index.html"
+                },
+                "geo_restriction_locations": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Geo Restriction Locations",
+                    "description": "todo",
+                    "default": []
+                },
+                "geo_restriction_type": {
+                    "type": "string",
+                    "title": "Geo Restriction Type",
+                    "description": "todo",
+                    "default": "none"
+                },
+                "is_enabled": {
+                    "type": "boolean",
+                    "title": "Is Enabled",
+                    "description": "todo",
+                    "default": true
+                },
+                "is_ipv6_enabled": {
+                    "type": "boolean",
+                    "title": "Is Ipv6 Enabled",
+                    "description": "todo",
+                    "default": false
+                },
+                "logging_include_cookies": {
+                    "type": "boolean",
+                    "title": "Logging Include Cookies",
+                    "description": "todo",
+                    "default": false
+                },
+                "logging_prefix": {
+                    "type": "null",
+                    "title": "Logging Prefix",
+                    "description": "todo",
+                    "default": null
+                },
+                "name": {
+                    "type": "null",
+                    "title": "Name",
+                    "description": "todo",
+                    "default": null
+                },
+                "price_class": {
+                    "type": "string",
+                    "title": "Price Class",
+                    "description": "todo",
+                    "default": "PriceClass_200"
+                }
+            }
+        },
+        "cloudfront_distribution_default_cache_behavior": {
+            "type": "null",
+            "title": "Cloudfront Distribution Default Cache Behavior",
+            "description": "todo",
+            "default": null
+        },
+        "cloudfront_distribution_ordered_cache_behaviors": {
+            "type": "null",
+            "title": "Cloudfront Distribution Ordered Cache Behaviors",
+            "description": "todo",
+            "default": null
+        },
+        "cloudfront_distribution_origins": {
+            "type": "null",
+            "title": "Cloudfront Distribution Origins",
+            "description": "todo",
+            "default": null
+        },
+        "cloudfront_distribution_s3_origins": {
+            "type": "null",
+            "title": "Cloudfront Distribution S3 Origins",
+            "description": "todo",
+            "default": null
+        },
+        "cloudfront_enabled": {
+            "type": "boolean",
+            "title": "Cloudfront Enabled",
+            "description": "todo",
+            "default": false
+        },
+        "cloudfront_origin_access_identity_name": {
+            "type": "null",
+            "title": "Cloudfront Origin Access Identity Name",
+            "description": "todo",
+            "default": null
+        },
+        "environment_type": {
+            "type": "null",
+            "title": "Environment Type",
+            "description": "todo",
+            "default": null
+        },
+        "lambda_function": {
+            "title": "Lambda Function",
+            "type": "object",
+            "description": "todo",
+            "properties": {
+                "canary_enabled": {
+                    "type": "boolean",
+                    "title": "Canary Enabled",
+                    "description": "todo",
+                    "default": false
+                },
+                "description": {
+                    "type": "null",
+                    "title": "Description",
+                    "description": "todo",
+                    "default": null
+                },
+                "environment_variables": {
+                    "title": "Environment Variables",
+                    "type": "object",
+                    "description": "todo",
+                    "properties": {
+                        "first": {
+                            "type": "string",
+                            "title": "First",
+                            "description": "todo",
+                            "default": "value"
+                        },
+                        "second": {
+                            "type": "string",
+                            "title": "Second",
+                            "description": "todo",
+                            "default": "value"
+                        }
+                    }
+                },
+                "execution_role_arn": {
+                    "type": "null",
+                    "title": "Execution Role Arn",
+                    "description": "todo",
+                    "default": null
+                },
+                "handler": {
+                    "type": "null",
+                    "title": "Handler",
+                    "description": "todo",
+                    "default": null
+                },
+                "memory_size": {
+                    "type": "integer",
+                    "title": "Memory Size",
+                    "description": "todo",
+                    "default": 1024
+                },
+                "name": {
+                    "type": "null",
+                    "title": "Name",
+                    "description": "todo",
+                    "default": null
+                },
+                "permission_paths": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Permission Paths",
+                    "description": "todo",
+                    "default": []
+                },
+                "runtime": {
+                    "type": "null",
+                    "title": "Runtime",
+                    "description": "todo",
+                    "default": null
+                },
+                "timeout": {
+                    "type": "integer",
+                    "title": "Timeout",
+                    "description": "todo",
+                    "default": 300
+                },
+                "tracing_config_mode": {
+                    "type": "string",
+                    "title": "Tracing Config Mode",
+                    "description": "todo",
+                    "default": "Active"
+                }
+            }
+        },
+        "lambda_function_brands": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "title": "Lambda Function Brands",
+            "description": "todo",
+            "default": [
+                "hsbc"
+            ]
+        },
+        "logging_bucket_name": {
+            "type": "null",
+            "title": "Logging Bucket Name",
+            "description": "todo",
+            "default": null
+        },
+        "region": {
+            "type": "null",
+            "title": "Region",
+            "description": "todo",
+            "default": null
+        },
+        "s3_bucket": {
+            "title": "S3 Bucket",
+            "type": "object",
+            "description": "todo",
+            "properties": {
+                "acl": {
+                    "type": "string",
+                    "title": "Acl",
+                    "description": "todo",
+                    "default": "private"
+                },
+                "force_destroy": {
+                    "type": "boolean",
+                    "title": "Force Destroy",
+                    "description": "todo",
+                    "default": false
+                },
+                "name": {
+                    "type": "null",
+                    "title": "Name",
+                    "description": "todo",
+                    "default": null
+                },
+                "tags": {
+                    "title": "Tags",
+                    "type": "object",
+                    "description": "todo",
+                    "properties": {}
+                },
+                "versioning_enabled": {
+                    "type": "boolean",
+                    "title": "Versioning Enabled",
+                    "description": "todo",
+                    "default": true
+                }
+            }
+        },
+        "terraform_state_bucket_name": {
+            "type": "null",
+            "title": "Terraform State Bucket Name",
+            "description": "todo",
+            "default": null
+        },
+        "waf_enabled": {
+            "type": "boolean",
+            "title": "Waf Enabled",
+            "description": "todo",
+            "default": true
+        },
+        "waf_web_acl_arn": {
+            "type": "null",
+            "title": "Waf Web Acl Arn",
+            "description": "todo",
+            "default": null
+        },
+        "web_acl_id": {
+            "type": "null",
+            "title": "Web Acl Id",
+            "description": "todo",
+            "default": null
+        }
+    }
+}
